@@ -16,14 +16,17 @@ app.use(express.static("public"));
 
 // Connecting to MongoDB
 mongoose
-  .connect("mongodb://127.0.0.1:27017/todolistDB", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true, // Using the new unified topology engine
-  })
+  .connect(
+    "mongodb+srv://admin-Rahil:rahil123@cluster0.eezfufr.mongodb.net/todolistDB",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true, // Using the new unified topology engine
+    }
+  )
   .then(() => {
     console.log("Connected to MongoDB.");
-    app.listen(4000, function () {
-      console.log("Server started on port 4000");
+    app.listen(3000, function () {
+      console.log("Server started on port 3000");
     });
   })
   .catch((err) => {
